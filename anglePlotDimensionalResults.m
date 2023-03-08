@@ -5,23 +5,24 @@ clc; clear all;
 lw = "LineWidth";
 fsize = "FontSize";
 start = 26;
-final = 4;
+final =6;
+xAxisScaling = 25/55;
 figure
 %% Standar Error Plot 1
 myTableTry1 = table2array(readtable("angle3-1.txt"))';
 myTableTry2 = table2array(readtable("angle3-2.txt"))';
 myTableTry3 = table2array(readtable("angle3-3.txt"))';
-
+final =7;
 dataSet = [myTableTry1(start:end-final,1) myTableTry2(start:end-final,1) myTableTry3(start:end-final,1)];
 stdError = zeros(length(dataSet),1);
 for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:))/sqrt(length(dataSet(i,:)));
 end
-xAxis = myTableTry2(start:end-final,2);
+xAxis = myTableTry2(start:end-final,2)*xAxisScaling;
 avarageData = sum(dataSet')/length(dataSet(1,:));
 hold on;
-errorbar(xAxis,dataSet(:,2),stdError,"o-",lw,1.5); 
-
+errorbar(xAxis+2*xAxisScaling,dataSet(:,2),stdError,"o-",lw,1.5); 
+final =6;
 %% Standar Error Plot 2
 myTableTry1 = table2array(readtable("angle1-1.txt"))';
 myTableTry2 = table2array(readtable("angle1-2.txt"))';
@@ -36,9 +37,9 @@ stdError = zeros(length(dataSet),1);
 for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:))/sqrt(length(dataSet(i,:)));
 end
-xAxis = myTableTry2(start:end-final,2);
+xAxis = myTableTry2(start:end-final,2)*xAxisScaling;
 hold on
-errorbar(xAxis,dataSet(:,2),stdError,"o-",lw,1.5); 
+errorbar(xAxis+1*xAxisScaling,dataSet(:,2),stdError,"o-",lw,1.5); 
 
 
 %% Standar Error Plot 3
@@ -54,7 +55,7 @@ stdError = zeros(length(dataSet),1);
 for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:))/sqrt(length(dataSet(i,:)));
 end
-xAxis = myTableTry2(start:end-final,2);
+xAxis = myTableTry2(start:end-final,2)*xAxisScaling;
 avarageData = sum(dataSet')/length(dataSet(1,:));
 hold on;
 errorbar(xAxis,dataSet(:,2),stdError,"o-",lw,1.5); 
@@ -72,7 +73,7 @@ stdError = zeros(length(dataSet),1);
 for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:))/sqrt(length(dataSet(i,:)));
 end
-xAxis = myTableTry2(start:end-final,2);
+xAxis = myTableTry2(start:end-final,2)*xAxisScaling;
 hold on;
 errorbar(xAxis,dataSet(:,2),stdError,"o-",lw,1.5); 
 
@@ -90,11 +91,11 @@ stdError = zeros(length(dataSet),1);
 for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:))/sqrt(length(dataSet(i,:)));
 end
-xAxis = myTableTry2(start:end-final,2);
+xAxis = myTableTry2(start:end-final,2)*xAxisScaling;
 hold on;
 errorbar(xAxis,dataSet(:,2),stdError,"o-",lw,1.5); 
 
-legend("Angle 20","Angle 30","Angle 45","Angle 60","Angle 70",fsize,15,"Location","northwest")
-title("Nondimensional Velocity Comparision",fsize,15)
+legend("20"+char(176),"30"+char(176),"45"+char(176),"60"+char(176),"70"+char(176),fsize,15,"Location","northwest")
+title("Velocity Comparision",fsize,15)
 % ylim([0.2 1.1]);xlim([0.2 1.1]);
 dimensionalPlotSettings

@@ -6,6 +6,7 @@ lw = "LineWidth";
 fsize = "FontSize";
 start = 26;
 final = 4;
+
 figure
 %% Standar Error Plot 1
 myTableTry1 = table2array(readtable("angle3-1.txt"))';
@@ -97,7 +98,7 @@ avarageData = sum(dataSet')/length(dataSet(1,:));
 hold on;
 errorbar(xAxis,dataSet(:,2)/max(dataSet(:,2)),stdError,"o-",lw,1.5); 
 
-legend("Angle 20","Angle 30","Angle 45","Angle 60","Angle 70",fsize,15,"Location","northwest")
+legend("20"+char(176),"30"+char(176),"45"+char(176),"60"+char(176),"70"+char(176),fsize,15,"Location","northwest")
 title("Nondimensional Velocity Comparision",fsize,15)
-ylim([0.2 1.1]);xlim([0.2 1.1]);
+ylim([0.45 1.05]);xlim([0.3 1]);
 nondimensionalPlotSettings
