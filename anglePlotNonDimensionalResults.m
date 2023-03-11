@@ -19,9 +19,9 @@ for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:)/max(dataSet(i,:)))/sqrt(length(dataSet(i,:)));
 end
 xAxis = myTableTry2(start:end-final,2)/max(myTableTry1(:,2));
-avarageData = sum(dataSet')/length(dataSet(1,:));
+avarageData = dataSet*[1;1;1]/3;
 hold on;
-errorbar(xAxis,dataSet(:,2)/max(dataSet(:,2)),stdError,"o-",lw,1.5); 
+errorbar(xAxis,avarageData/max(avarageData),stdError,"o-",lw,1.5); 
 
 %% Standar Error Plot 2
 myTableTry1 = table2array(readtable("angle1-1.txt"))';
@@ -38,9 +38,9 @@ for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:)/max(dataSet(i,:)))/sqrt(length(dataSet(i,:)));
 end
 xAxis = myTableTry2(start:end-final,2)/max(myTableTry1(:,2));
-avarageData = sum(dataSet')/length(dataSet(1,:));
+avarageData = dataSet*[1;1;1;1]/4;
 hold on
-errorbar(xAxis,dataSet(:,2)/max(dataSet(:,2)),stdError,"o-",lw,1.5); 
+errorbar(xAxis,avarageData/max(avarageData),stdError,"o-",lw,1.5); 
 
 
 %% Standar Error Plot 3
@@ -57,9 +57,9 @@ for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:)/max(dataSet(i,:)))/sqrt(length(dataSet(i,:)));
 end
 xAxis = myTableTry2(start:end-final,2)/max(myTableTry1(:,2));
-avarageData = sum(dataSet')/length(dataSet(1,:));
+avarageData = dataSet*[1;1;1;1;1]/5;
 hold on;
-errorbar(xAxis,dataSet(:,2)/max(dataSet(:,2)),stdError,"o-",lw,1.5); 
+errorbar(xAxis,avarageData/max(avarageData),stdError,"o-",lw,1.5); 
 
 %% Standar Error Plot 4
 myTableTry1 = table2array(readtable("angle5-1.txt"))';
@@ -75,9 +75,9 @@ for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:)/max(dataSet(i,:)))/sqrt(length(dataSet(i,:)));
 end
 xAxis = myTableTry2(start:end-final,2)/max(myTableTry1(:,2));
-avarageData = sum(dataSet')/length(dataSet(1,:));
+avarageData = dataSet*[1;1;1;1;1]/5;
 hold on;
-errorbar(xAxis,dataSet(:,2)/max(dataSet(:,2)),stdError,"o-",lw,1.5); 
+errorbar(xAxis,avarageData/max(avarageData),stdError,"o-",lw,1.5); 
 
 
 %% Standar Error Plot 5
@@ -94,9 +94,9 @@ for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:)/max(dataSet(i,:)))/sqrt(length(dataSet(i,:)));
 end
 xAxis = myTableTry2(start:end-final,2)/max(myTableTry1(:,2));
-avarageData = sum(dataSet')/length(dataSet(1,:));
+avarageData = dataSet*[1;1;1;1;1]/5;
 hold on;
-errorbar(xAxis,dataSet(:,2)/max(dataSet(:,2)),stdError,"o-",lw,1.5); 
+errorbar(xAxis,avarageData/max(avarageData),stdError,"o-",lw,1.5); 
 
 legend("20"+char(176),"30"+char(176),"45"+char(176),"60"+char(176),"70"+char(176),fsize,15,"Location","northwest")
 title("Nondimensional Velocity Comparision",fsize,15)
