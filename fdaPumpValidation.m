@@ -8,6 +8,9 @@ lw = "LineWidth";
 fsize = "FontSize";
 figure
 subplot(2,1,1)
+
+
+
 plot(fda(:,1),fda(:,2),lw,2); hold on;
 
 myTableTry1 = table2array(readtable("condition2-1.txt"))';

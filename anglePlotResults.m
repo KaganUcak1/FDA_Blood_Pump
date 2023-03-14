@@ -6,6 +6,8 @@ lw = "LineWidth";
 fsize = "FontSize";
 start = 25;
 figure
+
+
 myTableTry1 = table2array(readtable("angle3-1.txt"))';
 myTableTry2 = table2array(readtable("angle3-2.txt"))';
 myTableTry3 = table2array(readtable("angle3-3.txt"))';
