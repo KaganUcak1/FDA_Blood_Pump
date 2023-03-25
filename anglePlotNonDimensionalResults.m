@@ -18,6 +18,7 @@ stdError = zeros(length(dataSet),1);
 for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:)/max(dataSet(i,:)))/sqrt(length(dataSet(i,:)));
 end
+stdErrMatrix(:,1) = stdError;
 xAxis = myTableTry2(start:end-final,2)/max(myTableTry1(:,2));
 avarageData = dataSet*[1;1;1]/3;
 hold on;
@@ -29,14 +30,13 @@ myTableTry2 = table2array(readtable("angle1-2.txt"))';
 myTableTry3 = table2array(readtable("angle1-3.txt"))';
 myTableTry4 = table2array(readtable("angle1-4.txt"))';
 
-
 dataSet = [myTableTry1(start:end-final,1) myTableTry2(start:end-final,1) myTableTry3(start:end-final,1) myTableTry4(start:end-final,1)];
-
 
 stdError = zeros(length(dataSet),1);
 for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:)/max(dataSet(i,:)))/sqrt(length(dataSet(i,:)));
 end
+stdErrMatrix(:,2) = stdError;
 xAxis = myTableTry2(start:end-final,2)/max(myTableTry1(:,2));
 avarageData = dataSet*[1;1;1;1]/4;
 hold on
@@ -56,6 +56,7 @@ stdError = zeros(length(dataSet),1);
 for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:)/max(dataSet(i,:)))/sqrt(length(dataSet(i,:)));
 end
+stdErrMatrix(:,3) = stdError;
 xAxis = myTableTry2(start:end-final,2)/max(myTableTry1(:,2));
 avarageData = dataSet*[1;1;1;1;1]/5;
 hold on;
@@ -74,6 +75,7 @@ stdError = zeros(length(dataSet),1);
 for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:)/max(dataSet(i,:)))/sqrt(length(dataSet(i,:)));
 end
+stdErrMatrix(:,4) = stdError;
 xAxis = myTableTry2(start:end-final,2)/max(myTableTry1(:,2));
 avarageData = dataSet*[1;1;1;1;1]/5;
 hold on;
@@ -88,11 +90,12 @@ myTableTry4 = table2array(readtable("angle2-4.txt"))';
 myTableTry5 = table2array(readtable("angle2-5.txt"))';
 
 dataSet = [myTableTry1(start:end-final,1) myTableTry2(start:end-final,1) myTableTry3(start:end-final,1) myTableTry4(start:end-final,1) myTableTry5(start:end-final,1)];
-
 stdError = zeros(length(dataSet),1);
 for i = 1:length(dataSet)
     stdError(i) = std(dataSet(i,:)/max(dataSet(i,:)))/sqrt(length(dataSet(i,:)));
 end
+stdErrMatrix(:,5) = stdError;
+
 xAxis = myTableTry2(start:end-final,2)/max(myTableTry1(:,2));
 avarageData = dataSet*[1;1;1;1;1]/5;
 hold on;
