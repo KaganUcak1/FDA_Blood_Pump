@@ -1,6 +1,6 @@
 import os
 
-root_folder_path = ".\_velocityProfiles"
+root_folder_path = ".\_vectorFieldImpellarInside"
 
 for subdir, dirs, files in os.walk(root_folder_path):
     for filename in files:
