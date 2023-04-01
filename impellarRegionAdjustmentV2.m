@@ -70,17 +70,17 @@ arrowDensity = 1;
 quiver(newTable(1:arrowDensity:end,1),newTable(1:arrowDensity:end,2),newTable(1:arrowDensity:end,3),newTable(1:arrowDensity:end,4),2,"r","LineWidth",1);
 axis equal;axis(axisArray)
 title("Angle " +k);
-writematrix(newTable,"angle"+k+"VectorField.txt")
+writematrix(newTable,"angle"+k+"VectorField.txt","Delimiter","tab")
 
 
 %% contour
 figure
-x2 = unique(newTable(:,1),'rows');
-y2 = unique(newTable(:,2),'rows');
+x2 = unique(myTable(:,1),'rows');
+y2 = unique(myTable(:,2),'rows');
 z2 = sqrt(contourTable(:,3).^2+contourTable(:,4).^2);
 Z = reshape(z2,161,101)';
 
-contourf(x2(1:end),-y2(1:end),Z,10,"LineColor","none")
+contourf(x2(1:end)+xShift,-y2(1:end)+yShift,Z,10,"LineColor","none")
 axis equal
 colorbar; new_cmap = jet(64); colormap(new_cmap)
 
