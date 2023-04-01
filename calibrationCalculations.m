@@ -15,4 +15,4 @@ avgVelocityScaled = avgVelocity/xScale*ourScale
 
 Q = avgVelocityScaled*pi*(diameterScaled/2/1000)^2*1000*60*60
 
-35/60/60/1000/pi/(4.85/2/1000)^2
+35/60/60/1000/pi/(5/2/1000)^2

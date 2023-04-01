@@ -7,7 +7,6 @@ angularVelocity = 15.6; %hz
 myTable = table2array(readtable("./_vectorField/Export_Date=230318_Time=160056nozzleAngleNew1-1/B00002.txt"));
 img = imread('fdaRotorimage.png');
 
-
 figure
 subplot(1,2,1)
 imageR = 27;
