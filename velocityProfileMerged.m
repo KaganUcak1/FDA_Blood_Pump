@@ -40,7 +40,7 @@ for k = ["15" "12-5" "10" ]
         elseif i == "3"
             errorbar(xAxis,avarageData,stdError,"ko-",lw,1.5); 
         end
-        if yIdx == 1; 
+        if yIdx == 1 
             title("Velocity Profiles in The Nozzle",fsize,20); 
             legend("30"+char(176),"45"+char(176),"60"+char(176),fsize,13)
         end
