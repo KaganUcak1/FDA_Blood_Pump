@@ -4,11 +4,11 @@ clc; clear;
 
 %% 3 Labin deneyi
 rho = 1035;                 % kg/m3
-rotaSpeed = 2500/60;        % 1/s
+rotaSpeed = 3500/60;        % 1/s
 diameter = 0.052;           % m
 dynVisco = 3.5 ;            % cP
 dynVisco = dynVisco/1000;   % kg/(m/s)
-Q = 7;                    % L/min
+Q = 2.5;                    % L/min
 Q = Q/1000/60;              % m^3/s
 
 Re = 2*pi*rho*rotaSpeed*diameter^2/dynVisco

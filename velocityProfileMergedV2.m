@@ -1,7 +1,6 @@
 %% Nozzle Velocity Plot Dimensional Comparision V2
-% Last edit: 02.04.2023, Created: 11.03.2023
+% Last edit: 20.04.2023, Created: 11.03.2023
 clc; clear all;
-
 
 lw = "LineWidth";
 fsize = "FontSize";
@@ -12,7 +11,7 @@ yIdx = 1;
 for k = [ "" "_01" "_02" ]
     yShift = [0 1 2];
 %     subplot(3,1,yIdx);
-    for  i = ["A-2" "C" "B" "D" "E" "F"]
+    for  i = ["A-2" "B" "D" "E" "F"]
         myTable1 =table2array(readtable("./_nozzleLines24-26-30mm/exp4-angle"+i+"-1"+k+"/B00001.txt"))';
         myTable2 =table2array(readtable("./_nozzleLines24-26-30mm/exp4-angle"+i+"-2"+k+"/B00001.txt"))';
         myTable3 =table2array(readtable("./_nozzleLines24-26-30mm/exp4-angle"+i+"-3"+k+"/B00001.txt"))';
@@ -40,17 +39,17 @@ for k = [ "" "_01" "_02" ]
         avarageData = dataSet*[1;1;1;1;1]/5;
         hold on;
         if i =="A-2" 
-            errorbar(xAxis,avarageData+yShift(yIdx),stdError,"bo-",lw,1.5); 
+            errorbar(xAxis-5,avarageData+yShift(yIdx),stdError,"o-",lw,1.5,"Color",	"#0072BD"); 
         elseif i == "B" 
-            errorbar(xAxis,avarageData+yShift(yIdx),stdError,"ro-",lw,1.5); 
+            errorbar(xAxis-5,avarageData+yShift(yIdx),stdError,"o-",lw,1.5,"Color", "#D95319"); 
         elseif i == "C" 
-            errorbar(xAxis,avarageData+yShift(yIdx),stdError,"ko-",lw,1.5); 
+            errorbar(xAxis-5,avarageData+yShift(yIdx),stdError,"o-",lw,1.5,"Color",	"#EDB120"); 
         elseif i == "D" 
-            errorbar(xAxis,avarageData+yShift(yIdx),stdError,"yo-",lw,1.5); 
+            errorbar(xAxis-5,avarageData+yShift(yIdx),stdError,"o-",lw,1.5,"Color",	"#EDB120"); 
         elseif i == "E"
-            errorbar(xAxis,avarageData+yShift(yIdx),stdError,"mo-",lw,1.5); 
+            errorbar(xAxis-5,avarageData+yShift(yIdx),stdError,"o-",lw,1.2,"Color",	"#7E2F8E"); 
         elseif i == "F"
-            errorbar(xAxis,avarageData+yShift(yIdx),stdError,"co-",lw,1.5); 
+            errorbar(xAxis-5,avarageData+yShift(yIdx),stdError,"o-",lw,1,"Color",	"#77AC30"); 
         end
         if yIdx == 1 
             title("Velocity Profiles in The Nozzle",fsize,20); 
@@ -59,7 +58,7 @@ for k = [ "" "_01" "_02" ]
 %     xlim([-4 4]); ylabel("Velocity (m/s)");
     yIdx = yIdx +1;
 end
-legend(["A" "B" "C" "D" "E" "F"],fsize,13)
+legend(["A" "B" "C" "D" "E"],fsize,9)
 box off
 % xlim([-4 4]); %ylim([-0.4 3]);
 xlabel("Distance X (mm)");
