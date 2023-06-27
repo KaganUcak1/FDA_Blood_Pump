@@ -1,7 +1,7 @@
 import re
 import os
 
-root_folder_path = ".\_figure4_data"
+root_folder_path = ".\iatvaExp1"
 
 for subdir, dirs, files in os.walk(root_folder_path):
     for foldername in dirs:

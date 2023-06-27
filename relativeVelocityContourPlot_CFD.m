@@ -5,9 +5,10 @@ clc; clear
 
 clrMap = load("colorMap2.mat");
 myTable0 = readmatrix("Plane1_Velocity.csv");
+myTable0 = readmatrix("FDA_951rpm_Data\FDA_0.csv");
 myTable0 = myTable0*1000;
 
-myTable1 = myTable0(1:10:end,:);
+myTable1 = myTable0(1:1:end,:);
 f1 = figure;
 myTable = zeros(length(myTable1),4);
 myTable(:,1)  = -myTable1(:,1);
