@@ -1,5 +1,5 @@
 %% Velocity Plot Dimensional Comparision
-% Last edit: 20.04.2023, Created: 08.03.2023
+% Last edit: 27.06.2023, Created: 08.03.2023
 clc; clear all;
 
 lw = "LineWidth";
@@ -124,8 +124,7 @@ avarageData = dataSet*[1;1;1;1;1]/5;
 hold on;
 errorbar(xAxis,avarageData,stdError,"o-",lw,1.5); 
 
-%legend("20"+char(176),"30"+char(176),"45"+char(176),"60"+char(176),"70"+char(176),fsize,15,"Location","northwest")
-legend("A","B","C","D","E","F",fsize,15,"Location","northwest")
+legend("0"+char(176),"12"+char(176),"20"+char(176),"48"+char(176),"68"+char(176),"76"+char(176),fsize,15,"Location","northwest")
 title("Velocity Comparision",fsize,15)
 ylim([1.0 2.3]);xlim([11.2 30]);
 dimensionalPlotSettings
